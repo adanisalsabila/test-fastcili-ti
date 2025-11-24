@@ -1,0 +1,318 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: "DM Sans", sans-serif;
+    background: linear-gradient(11deg, rgba(143, 137, 137, 0.816) 38%, rgba(255, 187, 61, 0.91) 100%);
+    color: #fff;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.05);
+}
+
+/* === Navbar Behavior === */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: transparent;
+    transition: top 0.4s ease, background-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+.navbar a, .navbar button, .navbar span {
+    text-transform: none !important;
+    transition: color 0.3s ease;
+}
+
+/* Kondisi Awal (Paling Atas) */
+.navbar .nav-link,
+.navbar .navbar-brands,
+.navbar .nc-icon {
+    color: white !important;
+}
+
+/* Saat scroll ke bawah (navbar hilang) */
+.navbar-hidden {
+    top: -100px; /* Sembunyikan navbar di atas layar */
+}
+
+/* Saat scroll ke atas (navbar muncul dengan background putih) */
+.navbar-scrolled {
+    background-color: white !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* [UBAH] Teks menjadi ORANGE saat background putih */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-brands,
+.navbar-scrolled .nc-icon {
+    color: orange !important;
+}
+
+/* [BARU] Efek hover, teks menjadi HITAM saat background putih */
+.navbar-scrolled .nav-link:hover,
+.navbar-scrolled .navbar-brands:hover,
+.navbar-scrolled .nav-link:hover .nc-icon {
+    color: black !important;
+}
+
+/* Wrapper & Section */
+.panduan-wrapper {
+    background-color: rgba(0, 0, 0, 0.274);
+    padding: 4rem 3rem;
+    border-radius: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.8s ease-in-out;
+}
+.panduan-wrapper h1 {
+    font-size: 3.5rem;
+    font-family: "Tinos", serif;
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+.panduan-wrapper h2 {
+    font-size: 1.8rem;
+    font-family: "Tinos", serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #fff;
+}
+.panduan-wrapper p.subtitle {
+    font-size: 1.1rem;
+    color: #f2f2f2;
+    margin-top: 1rem;
+    text-align: justify;
+}
+
+/* Tab dan Card */
+.card-nav-tabs {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+.card-header-primary {
+    border-bottom: 2px solid #ffffff;
+}
+.nav-tabs .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.nav-tabs .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+}
+.nav-tabs .nav-link.active {
+    background-color: white;
+    color: black !important;
+    font-weight: bold;
+}
+.center-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.card-body {
+    padding: 0;
+}
+.card-body .tab-pane p {
+    color: white !important;
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0 1rem;
+}
+
+/* Tab Wrapper */
+.tab-wrapper {
+    background-color: rgba(0, 0, 0, 0.274);
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    margin: 1rem;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+/* Flex Section */
+.panduan-flex-section {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+.panduan-text p {
+    margin-bottom: 0;
+}
+.panduan-text p b {
+    font-size: 1.3rem;
+    color: #ffbb3d;
+}
+
+/* Gambar */
+.panduan-image img {
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.panduan-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Tombol */
+.panduan-btn {
+    margin-top: 2rem;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    padding: 0.7rem 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.panduan-btn:hover {
+    background-color: #ffbb3d;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* Spinner */
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animasi masuk */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Margin atas konten agar tidak tertutup navbar */
+.mt-content {
+    margin-top: 100px;
+}
+
+/* RESPONSIVE MEDIA QUERY */
+@media (min-width: 1024px) {
+    .panduan-flex-section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .panduan-text {
+        width: 50%;
+        padding: 0 2rem;
+    }
+
+    .panduan-image {
+        width: 50%;
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 1023px) {
+    .panduan-wrapper h1 {
+        font-size: 2.8rem;
+    }
+
+    .panduan-wrapper p.subtitle {
+        font-size: 1rem;
+    }
+
+    .tab-wrapper {
+        margin: 1rem;
+    }
+
+    .card-nav-tabs {
+        padding: 1.5rem 1rem;
+    }
+
+    .panduan-image img {
+        max-height: 300px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .panduan-wrapper {
+        padding: 2rem 1rem;
+    }
+
+    .panduan-wrapper h1 {
+        font-size: 2rem;
+    }
+
+    .panduan-wrapper h2 {
+        font-size: 1.2rem;
+    }
+
+    .panduan-wrapper p.subtitle {
+        font-size: 0.95rem;
+    }
+
+    .card-nav-tabs {
+        padding: 1rem;
+    }
+
+    .panduan-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .panduan-text p b {
+        font-size: 1.1rem;
+    }
+}
+

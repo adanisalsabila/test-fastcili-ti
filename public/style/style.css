@@ -1,0 +1,164 @@
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* For WebKit browsers (Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+    width: 8px; /* ukuran lebar scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05); /* track (bagian belakang scrollbar), sedikit transparan */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3); /* warna "thumb" (bagian yang bisa digeser), semi transparan */
+    border-radius: 4px; /* sudut membulat */
+    transition: background-color 0.3s ease; /* animasi halus */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* warna saat hover */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin; /* scrollbar tipis */
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.05); /* thumb dan track */
+}
+
+
+/* Default style for all devices */
+.table-responsive {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    overflow-y: hidden; /* Hide vertical scroll */
+}
+
+.table-hover tbody tr:hover {
+    background: linear-gradient(
+        11deg,
+        rgba(249, 241, 220, 0.816) 38%,
+        rgba(255, 187, 61, 0.91) 100%
+    );
+}
+
+/* Media queries for responsive behavior */
+@media (max-width: 991.98px) {
+    /* Medium devices (tablets, < 992px) */
+    .table-responsive {
+        width: 100%;
+        display: block;
+        white-space: nowrap; /* Prevent line breaks */
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* Small devices (landscape phones, < 768px) */
+    .table-responsive {
+        border: 1px solid #ddd; /* Optional: add border for better visibility */
+    }
+
+    /* Optional: Add visual cue for scrollable tables */
+    .table-responsive:after {
+        content: "↔ Scroll untuk melihat lebih banyak";
+        display: block;
+        text-align: center;
+        padding: 5px;
+        font-size: 12px;
+        color: #777;
+        background: #f5f5f5;
+    }
+}
+
+/* Navbar Wrapper (Original Structure) */
+.navbar-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+/* Left Side (Toggle + Brand) */
+.navbar-toggle {
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex-grow: 1;
+    max-width: calc(100% - 120px);
+    padding-right: 15px;
+}
+
+/* Search Form */
+.navbar-search-form {
+    position: relative;
+    margin-right: 15px;
+    min-width: 250px;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.search-results a:not(:has(i)) {
+    display: block;
+    padding: 8px 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.search-results a:not(:has(i)):hover {
+    background-color: #f5f5f5;
+}
+
+/* Right Group */
+.navbar-right-group {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Kebab Toggler */
+.kebab-toggler {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-left: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        max-width: calc(100% - 80px);
+    }
+
+    .navbar-search-form.d-none.d-lg-flex {
+        display: none !important;
+    }
+
+    .navbar-content {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        padding: 15px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        z-index: 1000;
+        min-width: 250px;
+    }
+}
