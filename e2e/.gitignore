@@ -1,0 +1,41 @@
+# Playwright Test Results
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Screenshots and Videos
+screenshots/
+videos/
+traces/
+
+# Authentication state files
+playwright/.auth/
+*.json
+
+# Test artifacts
+*.zip
+
+# Environment files
+.env.test
+.env.local
+
+# Node modules (if testing separately)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
